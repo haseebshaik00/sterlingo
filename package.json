@@ -1,0 +1,24 @@
+{
+  "name": "sterlingo",
+  "version": "1.0.0",
+  "description": "Expense Manager App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haseebshaik00/sterlingo.git"
+  },
+  "author": "Shaik Haseeb Ur Rahman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/haseebshaik00/sterlingo/issues"
+  },
+  "homepage": "https://github.com/haseebshaik00/sterlingo#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.2"
+  }
+}
