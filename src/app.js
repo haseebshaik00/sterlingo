@@ -1,15 +1,16 @@
 const express = require('express');
 
 const { db } = require('./db/models');
+const { usersRoute } = require('./routes/users');
+const { transactionsRoute } = require('./routes/transactions');
 
 const app = express();
-
+d
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.get('/', (req,res) => {
-    res.send("<h1 style='color: red;'>Hi!</h1>");
-})
+app.use('/api/users', usersRoute);
+app.use('/api/transactions', transactionsRoute);
 
 db.sync()
     .then(() => {
