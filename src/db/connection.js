@@ -6,7 +6,7 @@ const db = new Sequelize('sterlingoDB', 'sterlingoUser', 'sterlingo123', {
 });
 
 db.authenticate()
-    .then(() => console.log("Database Connected!"))
+    .then(() => console.log("connection.js --- Database Connected!"))
     .catch((err) => console.log(err));
 
 module.exports = {

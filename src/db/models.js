@@ -23,7 +23,7 @@ const COL_TITLE_DEF = {
 }
 
 const COL_DESCRIPTION_DEF = {
-    type: Sequelize.DataTypes.STRING(300),
+    type: Sequelize.DataTypes.STRING(200),
     allowNull: false
 }
 
@@ -32,12 +32,12 @@ const Users = db.define('user', {
     name: COL_NAME_DEF,
     username: COL_USERNAME_DEF,
     phone: {
-        type: Sequelize.DataTypes.NUMBER(20),
+        type: Sequelize.DataTypes.INTEGER,
         unique: true,
         allowNull: false
     },
     age: {
-        type: Sequelize.DataTypes.NUMBER(3),
+        type: Sequelize.DataTypes.INTEGER,
         allowNull: false
     },
     occupation: {
@@ -50,19 +50,11 @@ const Transactions = db.define('transaction', {
     id: COL_ID_DEF,
     title: COL_TITLE_DEF,
     names: {
-        type: Sequelize.DataTypes.ARRAY,
+        type: Sequelize.DataTypes.JSON,
         allowNull: false
     },
     amount: {
-        type: Sequelize.DataTypes.NUMBER(10),
-        allowNull: false
-    },
-    date: {
-        type: Sequelize.DataTypes.DATE,
-        allowNull: false
-    },
-    time: {
-        type: Sequelize.DataTypes.TIME,
+        type: Sequelize.DataTypes.INTEGER,
         allowNull: false
     },
     category: {
