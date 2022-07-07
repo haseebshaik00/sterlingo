@@ -2,7 +2,7 @@ const { Users } = require('../db/models');
 const { getRandUser } = require('../utils/makeUsername');
 
 async function createUser(inputName, inputPhone, inputAge){
-    console.log(inputName + inputAge + inputPhone);
+    // console.log(inputName + inputAge + inputPhone);
     const user = await Users.create({
         name: inputName,
         username: await getRandUser(inputName),
@@ -18,13 +18,17 @@ async function getAllUsers(){
     return users;
 }
 
-async function getUserByID(id){
-    const user = await Users.findOne({id: id});
+async function getUserByID(searchId){
+    const user = await Users.findOne({
+        where: { id: searchId }
+      });
     return user;
 }
 
-async function getUserByUsername(username){
-    const user = await Users.findOne({username: username});
+async function getUserByUsername(searchUsername){
+    const user = await Users.findOne({
+        where: { Username: searchUsername }
+      });
     return user;
 }
 
