@@ -5,12 +5,12 @@ const { usersRoute } = require('./routes/users');
 const { transactionsRoute } = require('./routes/transactions');
 
 const app = express();
-d
+
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use('/api/users', usersRoute);
-app.use('/api/transactions', transactionsRoute);
+//app.use('/api/transactions', transactionsRoute);
 
 db.sync()
     .then(() => {

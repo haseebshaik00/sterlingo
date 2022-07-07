@@ -29,7 +29,13 @@ route.get('/', async (req, res) => {
 })
 
 route.post('/', async (req, res) => {
-    const user = await createUser();
+    const util=require('util');
+    let s=util.inspect(req.body).split(`Content-Disposition: form-data; name`);s.splice(0,1);
+    let r=`{"`;s.forEach((e)=>{r+=e.split(`\\r\\n------`)[0].replace(`"\\r\\n\\r\\n`,`":"`).replace(`\': \'"`,``).replace(`=`,``)+`",`});
+    s=r.slice(0,-1)+`}`;
+    console.log(s);
+    const { name, phone, age } = req.body;
+    const user = await createUser(name, phone, age);
     res.status(201).send(user);
 });
 

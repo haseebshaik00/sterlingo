@@ -32,7 +32,7 @@ const Users = db.define('user', {
     name: COL_NAME_DEF,
     username: COL_USERNAME_DEF,
     phone: {
-        type: Sequelize.DataTypes.INTEGER,
+        type: Sequelize.DataTypes.BIGINT,
         unique: true,
         allowNull: false
     },
