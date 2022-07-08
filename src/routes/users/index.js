@@ -34,8 +34,8 @@ route.post('/', async (req, res) => {
     // let r=`{"`;s.forEach((e)=>{r+=e.split(`\\r\\n------`)[0].replace(`"\\r\\n\\r\\n`,`":"`).replace(`\': \'"`,``).replace(`=`,``)+`",`});
     // s=r.slice(0,-1)+`}`;
     // console.log(s);
-    const { name, phone, age } = req.body;
-    const user = await createUser(name, phone, age);
+    const { name, phone, age, occupation } = req.body;
+    const user = await createUser(name, phone, age, occupation);
     res.status(201).send(user);
 });
 

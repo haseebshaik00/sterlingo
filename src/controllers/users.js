@@ -1,14 +1,14 @@
 const { Users } = require('../db/models');
 const { getRandUser } = require('../utils/makeUsername');
 
-async function createUser(inputName, inputPhone, inputAge){
+async function createUser(inputName, inputPhone, inputAge, inputOccupation){
     // console.log(inputName + inputAge + inputPhone);
     const user = await Users.create({
         name: inputName,
         username: await getRandUser(inputName),
         phone: inputPhone,
         age: inputAge,
-        occupation: "Student"
+        occupation: inputOccupation
     });
     return user;
 }
